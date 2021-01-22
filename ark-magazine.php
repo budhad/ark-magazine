@@ -11,6 +11,8 @@
  *
  * */
 
+// change by testForTest
+
 $arkHelp = new ArkHelp();
 
 require_once $arkHelp->get_plugin_dir_path() . 'inc/ark-magazine.php';
