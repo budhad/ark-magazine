@@ -25,7 +25,7 @@ define( 'ARK_PLUGIN_DIR_URL', plugin_dir_url(__FILE__) );
 
 require_once ARK_PLUGIN_DIR_PATH . 'inc/ark-magazine.php';
 
-// $arkMagazine = new ArkMagazine();
+$arkMagazine = new ArkMagazine();
 
 
 // class ArkHelp {
