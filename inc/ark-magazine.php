@@ -1,10 +1,14 @@
 <?php
 
-global $arkHelp;
+namespace ArkMagazine;
 
-require_once $arkHelp->get_plugin_dir_path() . 'inc/ark-admin.php';
-require_once $arkHelp->get_plugin_dir_path() . 'inc/ark-product.php';
-require_once $arkHelp->get_plugin_dir_path() . 'inc/ark-news.php';
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+require_once ARK_PLUGIN_DIR_PATH . 'inc/ark-admin.php';
+require_once ARK_PLUGIN_DIR_PATH . 'inc/ark-product.php';
+require_once ARK_PLUGIN_DIR_PATH . 'inc/ark-news.php';
 
 class ArkMagazine {
 	function __construct() {
@@ -16,3 +20,5 @@ class ArkMagazine {
 		$this->product->init();
 	}
 }
+
+

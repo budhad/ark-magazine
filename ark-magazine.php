@@ -11,34 +11,52 @@
  *
  * */
 
-$arkHelp = new ArkHelp();
+namespace ArkMagazine;
 
-require_once $arkHelp->get_plugin_dir_path() . 'inc/ark-magazine.php';
-
-$arkMagazine = new ArkMagazine();
-
-
-class ArkHelp {
-	private $plugin_basename;
-	private $plugin_dir_path;
-	private $plugin_dir_url;
-
-	function __construct() {
-		$this->plugin_basename = plugin_basename(__FILE__);
-		$this->plugin_dir_path = plugin_dir_path(__FILE__);
-		$this->plugin_dir_url = plugin_dir_url(__FILE__);
-	}
-
-	public function get_plugin_basename() {
-		return $this->plugin_basename;
-	}
-	public function get_plugin_dir_path() {
-		return $this->plugin_dir_path;
-	}
-	public function get_plugin_dir_url() {
-		return $this->plugin_dir_url;
-	}
+// $arkHelp = new ArkHelp();
+// ArkHelp::instance();
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
+
+define( 'ARK_PLUGIN_BASENAME', plugin_basename(__FILE__) );
+define( 'ARK_PLUGIN_DIR_PATH', plugin_dir_path(__FILE__) );
+define( 'ARK_PLUGIN_DIR_URL', plugin_dir_url(__FILE__) );
+
+require_once ARK_PLUGIN_DIR_PATH . 'inc/ark-magazine.php';
+
+// $arkMagazine = new ArkMagazine();
+
+
+// class ArkHelp {
+// 	private static $_instance = null;
+// 	private static $plugin_basename;
+// 	private static $plugin_dir_path;
+// 	private static $plugin_dir_url;
+
+// 	public static function instance() {
+// 		if ( is_null( self::$_instance ) ) {
+// 			self::$_instance = new self();
+// 		}
+// 		return self::$_instance;
+// 	}
+
+// 	function __construct() {
+// 		$this->plugin_basename = plugin_basename(__FILE__);
+// 		$this->plugin_dir_path = plugin_dir_path(__FILE__);
+// 		$this->plugin_dir_url = plugin_dir_url(__FILE__);
+// 	}
+
+// 	public static function get_plugin_basename() {
+// 		return self::$plugin_basename;
+// 	}
+// 	public static function get_plugin_dir_path() {
+// 		return self::$plugin_dir_path;
+// 	}
+// 	public static function get_plugin_dir_url() {
+// 		return self::$plugin_dir_url;
+// 	}
+// }
 
 
 

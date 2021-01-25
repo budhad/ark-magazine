@@ -1,5 +1,11 @@
 <?php 
 
+namespace ArkMagazine;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class ArkAdmins {
 	function __construct() {
 		
