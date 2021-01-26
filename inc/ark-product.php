@@ -7,14 +7,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class ArkProduct {
+    private static $instance = null;
+
+    public static function instance() {
+        if (is_null(self::$instance)) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
 	function __construct() {
-
-	}
-
-	public function init() {
 		add_action('init', [$this, 'register_product']);
 		add_action('init', [$this, 'register_product_taxonomy']);
 	}
+
+	// public function init() {
+
+	// }
 
 	public function register_product_taxonomy() {
 		register_taxonomy('ark_categories', ['ark_product'] ,array(
@@ -62,4 +71,31 @@ class ArkProduct {
         ) );
 	}		
 
+    public static function get_wp_products( $id = null, $count = null, $offset = null ) {
+        $args = [
+            'post_type'     => 'ark_product',
+            'post_status'   => 'publish'
+            // 'paged'      => 1
+        ];
+
+        if (!is_null($count)) {
+            $args['posts_per_page'] = $count;
+        }
+
+        if (!is_null($offset)) {
+            $args['offset'] = $offset;
+        }
+
+        if (!is_null($id)) {
+            $args['page_id'] = $id;
+        }
+
+        $products = new \WP_Query($args);
+        if ( is_wp_error( $products )) {
+            // $products->get_error_message();
+            return null;
+        }
+
+        return $products;
+    }
 }
