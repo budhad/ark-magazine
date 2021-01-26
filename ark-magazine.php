@@ -11,8 +11,6 @@
  *
  * */
 
-namespace ArkMagazine;
-
 // $arkHelp = new ArkHelp();
 // ArkHelp::instance();
 if ( ! defined( 'ABSPATH' ) ) {
