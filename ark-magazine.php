@@ -11,6 +11,7 @@
  *
  * */
 
+<<<<<<< HEAD
 // $arkHelp = new ArkHelp();
 // ArkHelp::instance();
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,6 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'ARK_PLUGIN_BASENAME', plugin_basename(__FILE__) );
 define( 'ARK_PLUGIN_DIR_PATH', plugin_dir_path(__FILE__) );
 define( 'ARK_PLUGIN_DIR_URL', plugin_dir_url(__FILE__) );
+=======
+// change by testForTest
+
+$arkHelp = new ArkHelp();
+>>>>>>> 3a31df7554ca24aa2c3a7490b62f287c75e95026
 
 require_once ARK_PLUGIN_DIR_PATH . 'inc/ark-magazine.php';
 
